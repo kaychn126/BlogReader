@@ -1,0 +1,6 @@
+framework module CKToolKit {
+  umbrella header "CKToolKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

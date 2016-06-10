@@ -1,0 +1,21 @@
+use_frameworks!
+platform :ios, ‘7.0’
+
+target 'BlogReader' do
+source 'https://github.com/CocoaPods/Specs.git'
+pod 'Masonry'
+pod 'FMDB'
+pod 'MJExtension'
+pod 'FCFileManager'
+pod 'NSXtensions'
+pod 'AFNetworking'
+pod 'SVProgressHUD'
+pod 'UIActionSheet+Blocks'
+pod 'LKDBHelper'
+pod 'YTKKeyValueStore'
+pod 'YYCache'
+
+source 'https://git.coding.net/cker/CKSpecs.git'
+pod 'CKToolKit'
+end
+
