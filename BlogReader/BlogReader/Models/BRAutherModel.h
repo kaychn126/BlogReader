@@ -9,7 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface BRAutherModel : NSObject
-@property(nonatomic, strong)NSString *auther;
+@property(nonatomic, strong)NSString *autherId;
+@property(nonatomic, strong)NSString *autherName;
 @property(nonatomic, strong)NSString *headUrl;
 @property(nonatomic, assign)NSInteger articleNumber;
 @end

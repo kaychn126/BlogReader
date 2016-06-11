@@ -14,8 +14,8 @@ pod 'UIActionSheet+Blocks'
 pod 'LKDBHelper'
 pod 'YTKKeyValueStore'
 pod 'YYCache'
+pod 'EBBadgeView'
+pod 'EBEmptyView'
 
-source 'https://git.coding.net/cker/CKSpecs.git'
-pod 'CKToolKit'
 end
 

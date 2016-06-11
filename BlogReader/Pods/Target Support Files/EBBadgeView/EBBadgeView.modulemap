@@ -1,0 +1,6 @@
+framework module EBBadgeView {
+  umbrella header "EBBadgeView-umbrella.h"
+
+  export *
+  module * { export * }
+}

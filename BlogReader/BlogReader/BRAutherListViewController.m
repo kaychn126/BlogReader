@@ -142,7 +142,7 @@ static NSString *autherCellId = @"BRAutherCellId";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     BRBlogListViewController *blogListVc = [[BRBlogListViewController alloc] init];
-    blogListVc.auther = _autherList[indexPath.row].auther;
+    blogListVc.auther = _autherList[indexPath.row].autherName;
     blogListVc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:blogListVc animated:YES];
 }

@@ -14,11 +14,8 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
-  - CKToolKit (0.0.3):
-    - CKToolKit/EBBadgeView (= 0.0.3)
-    - CKToolKit/EBEmptyView (= 0.0.3)
-  - CKToolKit/EBBadgeView (0.0.3)
-  - CKToolKit/EBEmptyView (0.0.3)
+  - EBBadgeView (1.0.1)
+  - EBEmptyView (0.0.2)
   - FCFileManager (1.0.17)
   - FMDB (2.6.2):
     - FMDB/standard (= 2.6.2)
@@ -36,7 +33,8 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
-  - CKToolKit
+  - EBBadgeView
+  - EBEmptyView
   - FCFileManager
   - FMDB
   - LKDBHelper
@@ -50,7 +48,8 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
-  CKToolKit: 566592934989ca7d99b7bd17eb96b96707637f68
+  EBBadgeView: 678c5793164a1a5f98efa09854cf6c1129d43f8e
+  EBEmptyView: adf9c98cfcb18c1a3cadc904196c13d24180bf82
   FCFileManager: 8bfc931ce2a6223676147e9baf0e8a65c691eca6
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   LKDBHelper: 3a32d32eea134a3d20bc87b4434a8762c40e4862
@@ -62,6 +61,4 @@ SPEC CHECKSUMS:
   YTKKeyValueStore: 4d002941540dd5108fa23009b71e0f2f937f7a0f
   YYCache: 282f35b5b0990833d0b7a06d864a87141a021da2
 
-PODFILE CHECKSUM: 841592966047ec01fc73d6d071ea6f912cad5109
-
-COCOAPODS: 1.0.1
+COCOAPODS: 0.39.0

@@ -1,0 +1,6 @@
+framework module EBEmptyView {
+  umbrella header "EBEmptyView-umbrella.h"
+
+  export *
+  module * { export * }
+}

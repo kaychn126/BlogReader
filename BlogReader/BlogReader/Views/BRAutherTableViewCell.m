@@ -63,7 +63,7 @@
 - (void)setAutherModel:(BRAutherModel *)autherModel{
     _autherModel = autherModel;
     [_headerImageView setImageWithURL:[NSURL URLWithString:_autherModel.headUrl] placeholderImage:[UIImage imageNamed:@"bloglist_header_placeholder"]];
-    _autherLabel.text = _autherModel.auther;
+    _autherLabel.text = _autherModel.autherName;
     _numberLbel.text = [NSString stringWithFormat:@"%ld篇博客",(long)_autherModel.articleNumber];
 }
 

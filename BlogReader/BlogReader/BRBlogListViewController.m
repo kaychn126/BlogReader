@@ -29,10 +29,14 @@ static NSString *blogCellId = @"BRBlogTableViewCellId";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"博客";
+    if (_auther) {
+        self.title = _auther;
+    } else {
+        self.title = @"博客";
+    }
+    
     self.view.backgroundColor = [UIColor whiteColor];
     [self tableView];
-//    [_tableView.header beginRefreshing];
     [self loadCachedData];
 }
 

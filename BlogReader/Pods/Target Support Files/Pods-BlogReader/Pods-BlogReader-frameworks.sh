@@ -16,7 +16,7 @@ install_framework()
     local source="$1"
   fi
 
-  local destination="${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}"
+  local destination="${CONFIGURATION_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}"
 
   if [ -L "${source}" ]; then
       echo "Symlinked..."
@@ -59,8 +59,8 @@ code_sign_if_enabled() {
   if [ -n "${EXPANDED_CODE_SIGN_IDENTITY}" -a "${CODE_SIGNING_REQUIRED}" != "NO" -a "${CODE_SIGNING_ALLOWED}" != "NO" ]; then
     # Use the current code_sign_identitiy
     echo "Code Signing $1 with Identity ${EXPANDED_CODE_SIGN_IDENTITY_NAME}"
-    echo "/usr/bin/codesign --force --sign ${EXPANDED_CODE_SIGN_IDENTITY} ${OTHER_CODE_SIGN_FLAGS} --preserve-metadata=identifier,entitlements \"$1\""
-    /usr/bin/codesign --force --sign ${EXPANDED_CODE_SIGN_IDENTITY} ${OTHER_CODE_SIGN_FLAGS} --preserve-metadata=identifier,entitlements "$1"
+    echo "/usr/bin/codesign --force --sign ${EXPANDED_CODE_SIGN_IDENTITY} --preserve-metadata=identifier,entitlements \"$1\""
+    /usr/bin/codesign --force --sign ${EXPANDED_CODE_SIGN_IDENTITY} --preserve-metadata=identifier,entitlements "$1"
   fi
 }
 
@@ -84,30 +84,32 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "$BUILT_PRODUCTS_DIR/AFNetworking/AFNetworking.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/CKToolKit/CKToolKit.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/FCFileManager/FCFileManager.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/FMDB/FMDB.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/LKDBHelper/LKDBHelper.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/MJExtension/MJExtension.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/Masonry/Masonry.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/NSXtensions/NSXtensions.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/SVProgressHUD/SVProgressHUD.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/UIActionSheet+Blocks/UIActionSheet_Blocks.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/YTKKeyValueStore/YTKKeyValueStore.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/YYCache/YYCache.framework"
+  install_framework "Pods-BlogReader/AFNetworking.framework"
+  install_framework "Pods-BlogReader/EBBadgeView.framework"
+  install_framework "Pods-BlogReader/EBEmptyView.framework"
+  install_framework "Pods-BlogReader/FCFileManager.framework"
+  install_framework "Pods-BlogReader/FMDB.framework"
+  install_framework "Pods-BlogReader/LKDBHelper.framework"
+  install_framework "Pods-BlogReader/MJExtension.framework"
+  install_framework "Pods-BlogReader/Masonry.framework"
+  install_framework "Pods-BlogReader/NSXtensions.framework"
+  install_framework "Pods-BlogReader/SVProgressHUD.framework"
+  install_framework "Pods-BlogReader/UIActionSheet_Blocks.framework"
+  install_framework "Pods-BlogReader/YTKKeyValueStore.framework"
+  install_framework "Pods-BlogReader/YYCache.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "$BUILT_PRODUCTS_DIR/AFNetworking/AFNetworking.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/CKToolKit/CKToolKit.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/FCFileManager/FCFileManager.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/FMDB/FMDB.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/LKDBHelper/LKDBHelper.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/MJExtension/MJExtension.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/Masonry/Masonry.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/NSXtensions/NSXtensions.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/SVProgressHUD/SVProgressHUD.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/UIActionSheet+Blocks/UIActionSheet_Blocks.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/YTKKeyValueStore/YTKKeyValueStore.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/YYCache/YYCache.framework"
+  install_framework "Pods-BlogReader/AFNetworking.framework"
+  install_framework "Pods-BlogReader/EBBadgeView.framework"
+  install_framework "Pods-BlogReader/EBEmptyView.framework"
+  install_framework "Pods-BlogReader/FCFileManager.framework"
+  install_framework "Pods-BlogReader/FMDB.framework"
+  install_framework "Pods-BlogReader/LKDBHelper.framework"
+  install_framework "Pods-BlogReader/MJExtension.framework"
+  install_framework "Pods-BlogReader/Masonry.framework"
+  install_framework "Pods-BlogReader/NSXtensions.framework"
+  install_framework "Pods-BlogReader/SVProgressHUD.framework"
+  install_framework "Pods-BlogReader/UIActionSheet_Blocks.framework"
+  install_framework "Pods-BlogReader/YTKKeyValueStore.framework"
+  install_framework "Pods-BlogReader/YYCache.framework"
 fi
