@@ -9,6 +9,7 @@
 #import "BRWebViewController.h"
 #import "BRKeyValueStore.h"
 #import "BRUtils.h"
+#import "UINavigationItem+IndicatorView.h"
 
 @interface BRWebViewController ()<UIWebViewDelegate>
 @property(nonatomic, strong)UIWebView *webView;
@@ -65,11 +66,11 @@
 #pragma mark- webview delegate
 - (void)webViewDidStartLoad:(UIWebView *)webView{
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-    [SVProgressHUD showWithStatus:@"加载中..."];
+    [self.navigationItem showIndicatorViewWithStatus:@"加载中..."];
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView{
-    [SVProgressHUD dismiss];
+    [self.navigationItem hideIndicatorView];
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     
     //获取title
@@ -78,6 +79,7 @@
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
+    [self.navigationItem hideIndicatorView];
     [SVProgressHUD showErrorWithStatus:@"加载失败"];
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }

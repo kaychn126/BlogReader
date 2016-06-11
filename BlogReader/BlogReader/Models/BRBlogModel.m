@@ -10,4 +10,8 @@
 
 @implementation BRBlogModel
 
++ (NSString*)getTableName{
+    return @"BRBlogModelTable";
+}
+
 @end

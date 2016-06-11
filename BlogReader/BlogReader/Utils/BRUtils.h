@@ -10,4 +10,12 @@
 
 @interface BRUtils : NSObject
 + (NSString *)md5:(NSString *)srcString;
+
++ (void)executeGlobalQueue:(void (^)())queue;
+
++ (void)executeGlobalQueue:(void (^)())queue afterSeconds:(CGFloat)seconds;
+
++ (void)executeMainQueue:(void (^)())queue;
+
++ (void)executeMainQueue:(void (^)())queue afterSeconds:(CGFloat)seconds;
 @end

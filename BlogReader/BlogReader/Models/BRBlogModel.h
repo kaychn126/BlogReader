@@ -10,9 +10,9 @@
 
 @interface BRBlogModel : NSObject
 @property(nonatomic, assign)NSInteger blogId;
-@property(nonatomic, retain)NSString *auther;
-@property(nonatomic, retain)NSString *title;
-@property(nonatomic, retain)NSString *url;
-@property(nonatomic, retain)NSString *pubDate;
-@property(nonatomic, retain)NSString *headUrl;
+@property(nonatomic, strong)NSString *auther;
+@property(nonatomic, strong)NSString *title;
+@property(nonatomic, strong)NSString *url;
+@property(nonatomic, strong)NSString *pubDate;
+@property(nonatomic, strong)NSString *headUrl;
 @end

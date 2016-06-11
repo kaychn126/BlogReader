@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface BRBlogListViewController : UIViewController
-
+@property(nonatomic, strong)NSString *auther;
 @end

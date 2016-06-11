@@ -22,8 +22,8 @@ static NSString *blogCellId = @"BRBlogTableViewCellId";
 @implementation BRBlogListViewController
 
 #pragma mark- lifecycle
-- (void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     [_tableView deselectRowAtIndexPath:[_tableView indexPathForSelectedRow] animated:YES];
 }
 
@@ -32,7 +32,8 @@ static NSString *blogCellId = @"BRBlogTableViewCellId";
     self.title = @"博客";
     self.view.backgroundColor = [UIColor whiteColor];
     [self tableView];
-    [_tableView.header beginRefreshing];
+//    [_tableView.header beginRefreshing];
+    [self loadCachedData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -69,7 +70,7 @@ static NSString *blogCellId = @"BRBlogTableViewCellId";
 }
 */
 
-#pragma mark- MJRefresh
+#pragma mark- queryData
 
 - (void)refreshHeader{
     [self refreshDataWithHeader:YES];
@@ -89,6 +90,7 @@ static NSString *blogCellId = @"BRBlogTableViewCellId";
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
     [dic setValue:[NSNumber numberWithInteger:_pageNo] forKey:@"pageNo"];
     [dic setValue:[NSNumber numberWithInteger:kItemCountPerPage] forKey:@"pageNumber"];
+    [dic setValue:_auther forKey:@"auther"];
     
     AFHTTPSessionManager *sessionManager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:kBaseUrl] sessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
     
@@ -98,7 +100,13 @@ static NSString *blogCellId = @"BRBlogTableViewCellId";
         NSArray<BRBlogModel*> *blogArray = [BRBlogModel mj_objectArrayWithKeyValuesArray:responseObject];
         if (header) {
             [_blogList removeAllObjects];
+            if (_auther) {
+                [BRBlogModel deleteWithWhere:[NSString stringWithFormat:@"auther='%@'",_auther]];
+            }else {
+                [BRBlogModel deleteWithWhere:nil];
+            }
         }
+        [BRBlogModel insertArrayByAsyncToDB:blogArray];
         [_blogList addObjectsFromArray:blogArray];
         dispatch_async(dispatch_get_main_queue(), ^{
             if (blogArray.count<kItemCountPerPage) {
@@ -126,6 +134,17 @@ static NSString *blogCellId = @"BRBlogTableViewCellId";
             [_tableView eb_showDefaultEmptyView:_blogList.count==0];
         });
     }];
+}
+
+//获取缓存数据
+- (void)loadCachedData{
+    if (_auther) {
+        _blogList = [BRBlogModel searchWithWhere:[NSString stringWithFormat:@"auther='%@'",_auther]];
+    }else {
+        _blogList = [BRBlogModel searchWithWhere:nil];
+    }
+    [_tableView reloadData];
+    [_tableView.header beginRefreshing];
 }
 
 #pragma mark- tableView DataSource

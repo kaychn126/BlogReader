@@ -43,6 +43,7 @@
     tabbarController.tabBar.tintColor = kRGBColor(71,71,71);
     
     //custom SVProgressHUD
+    [SVProgressHUD setDefaultStyle:SVProgressHUDStyleCustom];
     [SVProgressHUD setBackgroundColor:[UIColor colorWithRed:0.f green:0.f blue:0.f alpha:0.6f]];
     [SVProgressHUD setForegroundColor:[UIColor whiteColor]];
     

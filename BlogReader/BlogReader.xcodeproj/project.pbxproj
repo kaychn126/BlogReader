@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		24A8FED91D0BA95A0082475B /* BRAutherModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A8FED81D0BA95A0082475B /* BRAutherModel.m */; };
+		24A8FEDF1D0BAFE60082475B /* BRAutherTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A8FEDE1D0BAFE60082475B /* BRAutherTableViewCell.m */; };
+		24A8FEE21D0BB61F0082475B /* UINavigationItem+IndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A8FEE11D0BB61F0082475B /* UINavigationItem+IndicatorView.m */; };
 		D6BB056F1D0AB232002A8A35 /* BRBlogReaderAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BB056E1D0AB232002A8A35 /* BRBlogReaderAppDelegate.m */; };
 		D6BB05881D0AB232002A8A35 /* BlogReaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BB05871D0AB232002A8A35 /* BlogReaderTests.m */; };
 		D6BB05931D0AB232002A8A35 /* BlogReaderUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BB05921D0AB232002A8A35 /* BlogReaderUITests.m */; };
@@ -38,7 +41,7 @@
 		D6BB06031D0B075E002A8A35 /* BRWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BB06021D0B075E002A8A35 /* BRWebViewController.m */; };
 		D6BB060A1D0B0971002A8A35 /* NSObject+Queue.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BB06091D0B0971002A8A35 /* NSObject+Queue.m */; };
 		D6BB060D1D0B0980002A8A35 /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BB060C1D0B0980002A8A35 /* UINavigationController+FDFullscreenPopGesture.m */; };
-		D6BB06111D0B0A04002A8A35 /* BRUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BB06101D0B0A04002A8A35 /* BRUtils.m */; };
+		D6BB06111D0B0A04002A8A35 /* BRUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BB06101D0B0A04002A8A35 /* BRUtils.m */; settings = {COMPILER_FLAGS = "-Wno-shorten-64-to-32"; }; };
 		D6BB06141D0B0BC0002A8A35 /* BRKeyValueStore.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BB06131D0B0BC0002A8A35 /* BRKeyValueStore.m */; };
 		E41229DD9AB4009E3318ED28 /* Pods_BlogReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BB7BD95866EDCA09591ADC0 /* Pods_BlogReader.framework */; };
 /* End PBXBuildFile section */
@@ -61,6 +64,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		24A8FED71D0BA95A0082475B /* BRAutherModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRAutherModel.h; sourceTree = "<group>"; };
+		24A8FED81D0BA95A0082475B /* BRAutherModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRAutherModel.m; sourceTree = "<group>"; };
+		24A8FEDD1D0BAFE60082475B /* BRAutherTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRAutherTableViewCell.h; sourceTree = "<group>"; };
+		24A8FEDE1D0BAFE60082475B /* BRAutherTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRAutherTableViewCell.m; sourceTree = "<group>"; };
+		24A8FEE01D0BB61F0082475B /* UINavigationItem+IndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+IndicatorView.h"; sourceTree = "<group>"; };
+		24A8FEE11D0BB61F0082475B /* UINavigationItem+IndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationItem+IndicatorView.m"; sourceTree = "<group>"; };
 		5D7872771BBA5847B9BD54C4 /* Pods-BlogReader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlogReader.release.xcconfig"; path = "Pods/Target Support Files/Pods-BlogReader/Pods-BlogReader.release.xcconfig"; sourceTree = "<group>"; };
 		7F73A9F25477F0BC5D79EB71 /* Pods_BlogReaderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlogReaderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BB7BD95866EDCA09591ADC0 /* Pods_BlogReader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlogReader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -269,6 +278,8 @@
 			children = (
 				D6BB05BE1D0AEBC0002A8A35 /* BRBlogModel.h */,
 				D6BB05BF1D0AEBC0002A8A35 /* BRBlogModel.m */,
+				24A8FED71D0BA95A0082475B /* BRAutherModel.h */,
+				24A8FED81D0BA95A0082475B /* BRAutherModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -278,6 +289,8 @@
 			children = (
 				D6BB05BB1D0AE5B2002A8A35 /* BRBlogTableViewCell.h */,
 				D6BB05BC1D0AE5B2002A8A35 /* BRBlogTableViewCell.m */,
+				24A8FEDD1D0BAFE60082475B /* BRAutherTableViewCell.h */,
+				24A8FEDE1D0BAFE60082475B /* BRAutherTableViewCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -382,6 +395,8 @@
 				D6BB06091D0B0971002A8A35 /* NSObject+Queue.m */,
 				D6BB060B1D0B0980002A8A35 /* UINavigationController+FDFullscreenPopGesture.h */,
 				D6BB060C1D0B0980002A8A35 /* UINavigationController+FDFullscreenPopGesture.m */,
+				24A8FEE01D0BB61F0082475B /* UINavigationItem+IndicatorView.h */,
+				24A8FEE11D0BB61F0082475B /* UINavigationItem+IndicatorView.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -686,12 +701,15 @@
 				D6BB05F41D0AF97B002A8A35 /* MJRefreshAutoNormalFooter.m in Sources */,
 				D6BB05BD1D0AE5B2002A8A35 /* BRBlogTableViewCell.m in Sources */,
 				D6BB05F31D0AF97B002A8A35 /* MJRefreshAutoGifFooter.m in Sources */,
+				24A8FEDF1D0BAFE60082475B /* BRAutherTableViewCell.m in Sources */,
 				D6BB05EF1D0AF97B002A8A35 /* MJRefreshBackFooter.m in Sources */,
 				D6BB05C01D0AEBC0002A8A35 /* BRBlogModel.m in Sources */,
 				D6BB06111D0B0A04002A8A35 /* BRUtils.m in Sources */,
+				24A8FEE21D0BB61F0082475B /* UINavigationItem+IndicatorView.m in Sources */,
 				D6BB05F11D0AF97B002A8A35 /* MJRefreshFooter.m in Sources */,
 				D6BB05FF1D0AF97B002A8A35 /* UIScrollView+MJRefresh.m in Sources */,
 				D6BB06141D0B0BC0002A8A35 /* BRKeyValueStore.m in Sources */,
+				24A8FED91D0BA95A0082475B /* BRAutherModel.m in Sources */,
 				D6BB05FD1D0AF97B002A8A35 /* MJRefreshConst.m in Sources */,
 				D6BB05F61D0AF97B002A8A35 /* MJRefreshBackGifFooter.m in Sources */,
 				D6BB05F21D0AF97B002A8A35 /* MJRefreshHeader.m in Sources */,

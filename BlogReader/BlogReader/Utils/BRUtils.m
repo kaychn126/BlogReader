@@ -20,4 +20,43 @@
     
     return result;
 }
+
+#pragma mark- queue
+/**
+ 在globalQueue中执行
+ 
+ @param queue globalQueue
+ */
++ (void)executeGlobalQueue:(void (^)())queue{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), queue);
+}
+
+/**
+ 在globalQueue中延迟执行
+ 
+ @param queue   globalQueue
+ @param seconds 延迟时间
+ */
++ (void)executeGlobalQueue:(void (^)())queue afterSeconds:(CGFloat)seconds{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(seconds * NSEC_PER_SEC)), dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), queue);
+}
+
+/**
+ 在主线程中执行
+ 
+ @param queue mainQueue
+ */
++ (void)executeMainQueue:(void (^)())queue{
+    dispatch_async(dispatch_get_main_queue(), queue);
+}
+
+/**
+ 在主线程中延迟执行
+ 
+ @param queue   mainQueue
+ @param seconds 延迟时间
+ */
++ (void)executeMainQueue:(void (^)())queue afterSeconds:(CGFloat)seconds{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(seconds * NSEC_PER_SEC)), dispatch_get_main_queue(), queue);
+}
 @end
